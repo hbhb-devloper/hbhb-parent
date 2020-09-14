@@ -44,11 +44,22 @@
     </dependencies>
 
     <profiles>
-        <profile><!-- 开发环境 -->
-            <id>dev</id>
+        <profile><!-- 本地环境 -->
+            <id>local</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <properties>
+                <env>-default</env>
+            </properties>
+            <build>
+                <filters>
+                    <filter>${profiles.base.path}/filter${env}.properties</filter>
+                </filters>
+            </build>
+        </profile>
+        <profile><!-- 开发环境 -->
+            <id>dev</id>
             <properties>
                 <env>-dev</env>
             </properties>
@@ -72,7 +83,7 @@
         <profile><!-- 生产环境 -->
             <id>prd</id>
             <properties>
-                <env></env>
+                <env>-prd</env>
             </properties>
             <build>
                 <filters>
