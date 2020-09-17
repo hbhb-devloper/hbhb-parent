@@ -13,18 +13,6 @@
         <version>1.0</version>
     </parent>
 
-<!--    <dependencyManagement>-->
-<!--        <dependencies>-->
-<!--            <dependency>-->
-<!--                <groupId>org.springframework.cloud</groupId>-->
-<!--                <artifactId>spring-cloud-dependencies</artifactId>-->
-<!--                <version>Finchley.SR2</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
-<!--        </dependencies>-->
-<!--    </dependencyManagement>-->
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -45,51 +33,31 @@
 
     <profiles>
         <profile><!-- 本地环境 -->
-            <id>local</id>
+            <id>default</id>
+            <properties>
+                <env>default</env>
+            </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <properties>
-                <env>-default</env>
-            </properties>
-            <build>
-                <filters>
-                    <filter>${profiles.base.path}/filter${env}.properties</filter>
-                </filters>
-            </build>
         </profile>
         <profile><!-- 开发环境 -->
             <id>dev</id>
             <properties>
-                <env>-dev</env>
+                <env>dev</env>
             </properties>
-            <build>
-                <filters>
-                    <filter>${profiles.base.path}/filter${env}.properties</filter>
-                </filters>
-            </build>
         </profile>
         <profile><!-- 测试环境 -->
             <id>test</id>
             <properties>
-                <env>-test</env>
+                <env>test</env>
             </properties>
-            <build>
-                <filters>
-                    <filter>${profiles.base.path}/filter${env}.properties</filter>
-                </filters>
-            </build>
         </profile>
         <profile><!-- 生产环境 -->
             <id>prd</id>
             <properties>
-                <env>-prd</env>
+                <env>prd</env>
             </properties>
-            <build>
-                <filters>
-                    <filter>${profiles.base.path}/filter${env}.properties</filter>
-                </filters>
-            </build>
         </profile>
     </profiles>
 
