@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>hbhb-parent</artifactId>
-    <version>1.1</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -34,30 +34,50 @@
     <profiles>
         <profile><!-- 本地环境 -->
             <id>default</id>
-            <properties>
-                <env>default</env>
-            </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <properties>
+                <env>-default</env>
+            </properties>
+            <build>
+                <filters>
+                    <filter>${profiles.base.path}/filter${env}.properties</filter>
+                </filters>
+            </build>
         </profile>
         <profile><!-- 开发环境 -->
             <id>dev</id>
             <properties>
-                <env>dev</env>
+                <env>-dev</env>
             </properties>
+            <build>
+                <filters>
+                    <filter>${profiles.base.path}/filter${env}.properties</filter>
+                </filters>
+            </build>
         </profile>
         <profile><!-- 测试环境 -->
             <id>test</id>
             <properties>
-                <env>test</env>
+                <env>-test</env>
             </properties>
+            <build>
+                <filters>
+                    <filter>${profiles.base.path}/filter${env}.properties</filter>
+                </filters>
+            </build>
         </profile>
         <profile><!-- 生产环境 -->
             <id>prd</id>
             <properties>
-                <env>prd</env>
+                <env>-prd</env>
             </properties>
+            <build>
+                <filters>
+                    <filter>${profiles.base.path}/filter${env}.properties</filter>
+                </filters>
+            </build>
         </profile>
     </profiles>
 
