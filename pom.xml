@@ -14,6 +14,7 @@
     </parent>
 
     <dependencies>
+        <!-- springboot包 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -25,19 +26,50 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- 架构基础包 -->
+        <dependency>
+            <groupId>com.hbhb</groupId>
+            <artifactId>hbhb-web</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.hbhb</groupId>
             <artifactId>hbhb-beetl</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>com.hbhb</groupId>
-            <artifactId>hbhb-common-sdk</artifactId>
+            <artifactId>hbhb-redis</artifactId>
             <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.hbhb</groupId>
-            <artifactId>hbhb-springboot-web</artifactId>
-            <version>1.1</version>
         </dependency>
     </dependencies>
 
