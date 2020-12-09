@@ -61,11 +61,6 @@
             <artifactId>hbhb-web</artifactId>
             <version>1.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.hbhb</groupId>
-            <artifactId>hbhb-redis</artifactId>
-            <version>1.0</version>
-        </dependency>
     </dependencies>
 
     <profiles>
